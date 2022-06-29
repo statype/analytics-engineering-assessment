@@ -1,0 +1,9 @@
+[sqlfluff]
+dialect=postgres
+# templater=dbt
+exclude_rules = L032
+
+[sqlfluff:rules]
+tab_space_size = 4
+max_line_length = 100
+indent_unit = space
