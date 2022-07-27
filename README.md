@@ -14,17 +14,24 @@ allow you to make progress even without `dbt` experience.
 
 ## Getting Started
 
-1. This repository is a template repository. Please use the *`Use This Template`*
+### Get the assignment
+
+1. This repository is a template repository. Please use the *`Use this template`*
 to create a new *Private* repository in your personal GitHub account:
 
-![Use This Template](docs/artifacts/use_this_template.png)
+![Use this template](docs/artifacts/use_this_template.png)
+
+2. On the next screen please select these options:
 ![Create New Private Repository from Template](docs/artifacts/create_new_private_repository.png)
 
-2. Add your @statype contact as an external contributor.
+3. Add your Statype contact as an external contributor - they should have
+  provided their Github Username but if they forgot please just ask:
 ![Add Collaborator to Private Repository](docs/artifacts/add_collaborator_to_private_repo.png)
 
 
-### With a devcontainer
+### Setting up your computer
+
+#### With a devcontainer
 
 _Prerequisites_:
 * Ensure you have [VSCode](https://code.visualstudio.com/download) installed locally.
@@ -39,7 +46,8 @@ if you want to use the configured devcontainer but do not use VSCode there are
 other ways to use devcontainers as documented on the internet or you can follow
 the "Without a devcontainer" directions below.
 
-### Without a devcontainer
+
+#### Without a devcontainer
 
 _Prerequisites_:
 * Ensure you have Docker and docker-compose running locally.
