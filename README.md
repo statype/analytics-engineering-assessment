@@ -14,11 +14,15 @@ allow you to make progress even without `dbt` experience.
 
 ## Getting Started
 
-This repository is a template repository - please clone it to your personal
-GitHub and add your @statype contact as an external contributor.  You may do
-this initially or after you've spent your 2-3h (3 hours absolutely maximum
-please - we would rather an unpolished working solution after 2 hours than an
-incredibly polished and "perfect" solution after 10.)
+1. This repository is a template repository. Please use the *`Use This Template`*
+to create a new *Private* repository in your personal GitHub account:
+
+![Use This Template](docs/artifacts/use_this_template.png)
+![Create New Private Repository from Template](docs/artifacts/create_new_private_repository.png)
+
+2. Add your @statype contact as an external contributor.
+![Add Collaborator to Private Repository](docs/artifacts/add_collaborator_to_private_repo.png)
+
 
 ### With a devcontainer
 
@@ -53,6 +57,10 @@ installs `dbt` and its Postgres driver and a SQL linter that is `dbt` aware.
 Install dbt dependencies - from within `acme-corp/` run `dbt deps`.
 
 ## The Assignment
+
+Please take 2-3h to complete the following tasks. 3 hours is an absolute
+maximum.  We would rather an unpolished working solution after 2 hours than an
+incredibly polished and "perfect" solution after 10.)
 
 The model defined in `marts/customers/customer_counts_daily.sql` counts the
 total number of customer records created over time as a metric (timeseries).
