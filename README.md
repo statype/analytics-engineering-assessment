@@ -9,8 +9,6 @@ https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
   - [Getting Started](#getting-started)
     - [Get the assignment](#get-the-assignment)
     - [Setting up your computer](#setting-up-your-computer)
-      - [With a devcontainer](#with-a-devcontainer)
-      - [Without a devcontainer](#without-a-devcontainer)
   - [The Assignment](#the-assignment)
     - [Additional smaller tasks](#additional-smaller-tasks)
     - [Submitting the Assignment](#submitting-the-assignment)
@@ -46,39 +44,18 @@ to create a new *Private* repository in your personal GitHub account:
 
 ### Setting up your computer
 
-#### With a devcontainer
-
 *Prerequisites*:
 
 - Ensure you have [VSCode](https://code.visualstudio.com/download) installed locally.
 - Ensure you have [Docker](https://docs.docker.com/get-docker/) installed locally.
 
 When you open this repository in VSCode you should be prompted to re-open the
-project in a container.  Once the container is running Postgres will be running
-in a container, python will be installed, and `dbt` and `sqlfluff` (a configured
-SQL linter) will be ready to roll.
+project in a container.  Once the devcontainer is running, a Postgres container
+will be running , python will be installed, and `dbt` and `sqlfluff` (a
+configured SQL linter) will be ready to go.
 
-if you want to use the configured devcontainer but do not use VSCode there are
-other ways to use devcontainers as documented on the internet or you can follow
-the "Without a devcontainer" directions below.
-
-#### Without a devcontainer
-
-*Prerequisites*:
-
-- Ensure you have Docker and docker-compose running locally.
-- Ensure you have Python and pip installed for local use.  You may
-  optionally use a pipenv or virtualenv or other isolation mechanism for Python
-  of your choosing.
-
-Within the `.devcontainer/` directory there is a `docker-compose.yml` and a
-`setup.sh` script.  The compose should be operatable as is via `docker-compose
-run -f .devcontainer/docker-compose.yml`.
-
-Install the Python dependencies via `pip install -r requirements.txt` - this
-installs `dbt` and its Postgres driver and a SQL linter that is `dbt` aware.
-
-Install dbt dependencies - from within `acme-corp/` run `dbt deps`.
+If you have any difficulties with the above please reach out to us and we will
+do our best to unstick you.
 
 ## The Assignment
 
