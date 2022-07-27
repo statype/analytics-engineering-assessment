@@ -22,9 +22,9 @@ incredibly polished and "perfect" solution after 10.)
 
 ### With a devcontainer
 
-This repository is meant to be run in a VSCode devcontainer or a Github
-Codespace.  If that is not available to you it should be possible to run it
-locally as well.
+_Prerequisites_:
+* Ensure you have [VSCode](https://code.visualstudio.com/download) installed locally.
+* Ensure you have [Docker](https://docs.docker.com/get-docker/) installed locally.
 
 When you open this repository in VSCode you should be prompted to re-open the
 project in a container.  Once the container is running Postgres will be running
