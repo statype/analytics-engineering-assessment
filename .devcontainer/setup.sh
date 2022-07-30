@@ -11,3 +11,5 @@ sudo apt-get -y install bash-completion postgresql-client
 
 pip3 install -r /workspace/requirements.txt
 ln -s /workspace/.sqlfluff* ~/
+
+cd /workspace && make setup-source-db

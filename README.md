@@ -54,6 +54,23 @@ project in a container.  Once the devcontainer is running, a Postgres container
 will be running , python will be installed, and `dbt` and `sqlfluff` (a
 configured SQL linter) will be ready to go.
 
+The database should be pre-loaded with data meaning that if you run
+`workspace/acme-corp$ dbt run` (`dbt run` from the `/workspace/acme-corp`
+directory) you should not get any errors.  If you do please run `dbt debug` from
+the same directory - it should say "All checks passed!" - if not please let us
+know.
+
+There are two sets of helper commands in the form of "make targets" e.g.
+commands of the form `make <target>` available from two different directories:
+
+- `/workspace` has commands to setup, and reset your database if things aren't
+  working.
+- `/workspace/acme-corp` has commands to run and test `dbt` models as well as
+  lint (check) them for style.
+
+In either directory running `make help` will give you a list of available
+commands.
+
 If you have any difficulties with the above please reach out to us and we will
 do our best to unstick you.
 
