@@ -71,6 +71,13 @@ commands of the form `make <target>` available from two different directories:
 In either directory running `make help` will give you a list of available
 commands.
 
+Additionally, when `dbt` runs the results will reside in a Postgres instance
+running in the devcontainer.  You *can* access them using the Postgres CLI from
+within the devcontainer but we recommend connecting with the client of your
+choice from your computer (rather than from within the devcontainer).  We like
+[Beekeeper Studio](https://www.beekeeperstudio.io/) which should be able to
+connect to the Postgres on `localhost` on port `5432`.
+
 If you have any difficulties with the above please reach out to us and we will
 do our best to unstick you.
 
