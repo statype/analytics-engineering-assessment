@@ -16,7 +16,7 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5432],
+	"forwardPorts": [5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "/workspace/.devcontainer/setup.sh",
@@ -24,6 +24,8 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
-		"git": "os-provided"
+		"git": "os-provided",
+		// This makes Windows work!
+		"docker-from-docker": "20.10"
 	}
 }

@@ -54,6 +54,42 @@ project in a container.  Once the devcontainer is running, a Postgres container
 will be running , python will be installed, and `dbt` and `sqlfluff` (a
 configured SQL linter) will be ready to go.
 
+The database should be pre-loaded with data meaning that if you run
+`workspace/acme-corp$ dbt run` (`dbt run` from the `/workspace/acme-corp`
+directory) you should not get any errors.  If you do please run `dbt debug` from
+the same directory - it should say "All checks passed!" - if not please let us
+know.
+
+There are two sets of helper commands in the form of "make targets" e.g.
+commands of the form `make <target>` available from two different directories:
+
+- `/workspace` has commands to setup, and reset your database if things aren't
+  working.
+- `/workspace/acme-corp` has commands to run and test `dbt` models as well as
+  lint (check) them for style.
+
+In either directory running `make help` will give you a list of available
+commands.
+
+When running `/workspace/acme-corp$ dbt run`, if you get errors which resemble
+the following this indicates the database is not setup correctly.  Running
+`/workspace$ make reset-source-db` should fix the database for you.
+
+```txt
+Database Error in model stg_customers (models/staging/acme/stg_customers.sql)
+  relation "acme.customers" does not exist
+  LINE 13:     from "postgres"."acme"."customers"
+                    ^
+  compiled SQL at target/run/acme_corp/models/staging/acme/stg_customers.sql
+```
+
+Additionally, when `dbt` runs the results will reside in a Postgres instance
+running in the devcontainer.  You *can* access them using the Postgres CLI from
+within the devcontainer but we recommend connecting with the client of your
+choice from your computer (rather than from within the devcontainer).  We like
+[Beekeeper Studio](https://www.beekeeperstudio.io/) which should be able to
+connect to the Postgres on `localhost` on port `5432`.
+
 If you have any difficulties with the above please reach out to us and we will
 do our best to unstick you.
 
