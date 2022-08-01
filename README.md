@@ -71,6 +71,18 @@ commands of the form `make <target>` available from two different directories:
 In either directory running `make help` will give you a list of available
 commands.
 
+When running `/workspace/acme-corp$ dbt run`, if you get errors which resemble
+the following this indicates the database is not setup correctly.  Running
+`/workspace$ make reset-source-db` should fix the database for you.
+
+```txt
+Database Error in model stg_customers (models/staging/acme/stg_customers.sql)
+  relation "acme.customers" does not exist
+  LINE 13:     from "postgres"."acme"."customers"
+                    ^
+  compiled SQL at target/run/acme_corp/models/staging/acme/stg_customers.sql
+```
+
 Additionally, when `dbt` runs the results will reside in a Postgres instance
 running in the devcontainer.  You *can* access them using the Postgres CLI from
 within the devcontainer but we recommend connecting with the client of your
