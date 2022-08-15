@@ -126,6 +126,7 @@ your solution).
 - [ ] Add [Generic Tests](https://docs.getdbt.com/docs/building-a-dbt-project/tests#generic-tests) to our models.
 - [ ] Add one or more [Singular Tests](https://docs.getdbt.com/docs/building-a-dbt-project/tests#singular-tests)
       to one or more of our models.
+- [ ] Ensure the Linter passes for your code by running `make lint` from the `acme-corp/` directory.
 
 ### Submitting the Assignment
 

@@ -26,7 +26,9 @@ days as (
 -- customer created_at is a timestamp rather than a day - truncate the timestamp
 -- to a day for grouping
 customers_by_day as (
-    select customer_id, date_trunc('day', created_at) as created_at
+    select
+        customer_id,
+        date_trunc('day', created_at) as created_at
     from customers
 ),
 
