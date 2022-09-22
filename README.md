@@ -6,12 +6,12 @@ https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
 -->
 - [Data Analytics Technical Assessment](#data-analytics-technical-assessment)
   - [Overview](#overview)
-  - [Getting Started](#getting-started)
-    - [Get the assignment](#get-the-assignment)
-    - [Setting up your computer](#setting-up-your-computer)
   - [The Assignment](#the-assignment)
     - [Additional smaller tasks](#additional-smaller-tasks)
     - [Submitting the Assignment](#submitting-the-assignment)
+  - [Getting Started](#getting-started)
+    - [Get the assignment](#get-the-assignment)
+    - [Setting up your computer](#setting-up-your-computer)
 
 ## Overview
 
@@ -26,6 +26,48 @@ assignment, albeit with a bit more research and reading of documentation.
 That's great!  Keep notes and we can talk about your research later.  In the
 mean time competency in SQL and the examples in the `models/` directory should
 allow you to make progress even without `dbt` experience.
+
+## The Assignment
+
+Please take 2-3h to complete the following tasks. 3 hours is an absolute
+maximum.  We would rather an unpolished working solution after 2 hours than an
+incredibly polished and "perfect" solution after 10.)
+
+The model defined in `marts/customers/customer_counts_daily.sql` counts the
+total number of customer records created over time as a metric (timeseries).
+This *may* be a vanity metric a company might track e.g. "We have had N
+customers signup since we launched!"  This does *not* calculate the more
+meaningful metric of "how many active customers do we have on day Y?" which is
+good for tracking engagement and for reasoning about revenue.
+
+We would like you to build two models: Active Customers by Day and Churn by Day
+as both a raw number of churned customers and a percentage of active customers
+on that day.  On your way to so doing please feel free to refactor or change our
+staging or models in marts.
+
+### Additional smaller tasks
+
+During your work you may notice that there is little in the way of testing or
+documentation captured in this project.  These are not a replacement for solving
+the core assignments of finding Active Customers by Day and Churn by Day but
+should you find that you have some remaining time or that addressing the below
+help you acheive the main goals we encourage you to do one or more of the
+following (or others we have not addressed - simply describe them in detail in
+your solution).
+
+- [ ] Add [Documentation](https://docs.getdbt.com/docs/building-a-dbt-project/documentation) to Sources and/or
+      Models or more sophisticated documentation with ["doc blocks"](https://docs.getdbt.com/docs/building-a-dbt-project/documentation#using-docs-blocks)
+- [ ] Add [Generic Tests](https://docs.getdbt.com/docs/building-a-dbt-project/tests#generic-tests) to our models.
+- [ ] Add one or more [Singular Tests](https://docs.getdbt.com/docs/building-a-dbt-project/tests#singular-tests)
+      to one or more of our models.
+- [ ] Ensure the Linter passes for your code by running `make lint` from the `acme-corp/` directory.
+
+### Submitting the Assignment
+
+Please feel comfortable working on the `main` branch in this repository.  You
+may absolutely fork to isolate work on ideas or approaches but merge your
+completed solutions to main and then leave your solution alone until our
+followup iteration session.
 
 ## Getting Started
 
@@ -92,45 +134,3 @@ connect to the Postgres on `localhost` on port `5432`.
 
 If you have any difficulties with the above please reach out to us and we will
 do our best to unstick you.
-
-## The Assignment
-
-Please take 2-3h to complete the following tasks. 3 hours is an absolute
-maximum.  We would rather an unpolished working solution after 2 hours than an
-incredibly polished and "perfect" solution after 10.)
-
-The model defined in `marts/customers/customer_counts_daily.sql` counts the
-total number of customer records created over time as a metric (timeseries).
-This *may* be a vanity metric a company might track e.g. "We have had N
-customers signup since we launched!"  This does *not* calculate the more
-meaningful metric of "how many active customers do we have on day Y?" which is
-good for tracking engagement and for reasoning about revenue.
-
-We would like you to build two models: Active Customers by Day and Churn by Day
-as both a raw number of churned customers and a percentage of active customers
-on that day.  On your way to so doing please feel free to refactor or change our
-staging or models in marts.
-
-### Additional smaller tasks
-
-During your work you may notice that there is little in the way of testing or
-documentation captured in this project.  These are not a replacement for solving
-the core assignments of finding Active Customers by Day and Churn by Day but
-should you find that you have some remaining time or that addressing the below
-help you acheive the main goals we encourage you to do one or more of the
-following (or others we have not addressed - simply describe them in detail in
-your solution).
-
-- [ ] Add [Documentation](https://docs.getdbt.com/docs/building-a-dbt-project/documentation) to Sources and/or
-      Models or more sophisticated documentation with ["doc blocks"](https://docs.getdbt.com/docs/building-a-dbt-project/documentation#using-docs-blocks)
-- [ ] Add [Generic Tests](https://docs.getdbt.com/docs/building-a-dbt-project/tests#generic-tests) to our models.
-- [ ] Add one or more [Singular Tests](https://docs.getdbt.com/docs/building-a-dbt-project/tests#singular-tests)
-      to one or more of our models.
-- [ ] Ensure the Linter passes for your code by running `make lint` from the `acme-corp/` directory.
-
-### Submitting the Assignment
-
-Please feel comfortable working on the `main` branch in this repository.  You
-may absolutely fork to isolate work on ideas or approaches but merge your
-completed solutions to main and then leave your solution alone until our
-followup iteration session.
